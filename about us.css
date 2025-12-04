@@ -1,0 +1,95 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-color: #fcfcfc;
+    color: #222;
+    font-family: 'Inter', sans-serif;
+    max-width: 1000px;
+    margin: 0 auto;
+    line-height: 1.6;
+}
+
+header {
+    background-color: #ffffff;
+    border-bottom: 1px solid #f0f0f0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 25px 50px;
+    margin-bottom: 40px;
+}
+
+.logo {
+   font-size: 26px;
+   font-weight: 500;
+   letter-spacing: 2px;
+   font-style: oblique;
+}
+
+nav a {
+    text-decoration: none;
+    color: #555;
+    font-weight: 400;
+    margin-left: 30px;
+    transition: color 0.3s ease;
+    padding: 5px 0;
+}
+
+nav a:hover {
+    color: #000;
+}
+
+
+#search-bar {
+    padding: 15px 50px;
+    background-color: #f7f7f7;
+    margin-bottom: 40px;
+    text-align: center;
+}
+
+#search-bar input[type="text"] {
+    width: 100%;
+    max-width: 400px;
+    padding: 12px 18px;
+    border: 1px solid #ddd;
+    border-radius: 25px;
+    font-size: 1em;
+    color: #333;
+}
+
+.hero-image {
+    height: 400px;
+    background-image: url('placeholder_restaurant_image.jpg');
+    background-size: cover;
+    background-position: center;
+    margin: 0 50px 40px 50px;
+    border-radius: 5px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+}
+
+
+h1 {
+    font-size: 2.2em;
+    font-weight: 300;
+    color: #333;
+    margin: 60px 50px 20px 50px;
+    letter-spacing: 0.5px;
+}
+
+p {
+    font-size: 1.05em;
+    line-height: 1.8;
+    margin: 0 50px 40px 50px;
+    text-align: justify;
+}
+
+p strong {
+    font-weight: 600;
+    color: #333;
+    background-color: #f0f0f0;
+    padding: 2px 5px;
+}

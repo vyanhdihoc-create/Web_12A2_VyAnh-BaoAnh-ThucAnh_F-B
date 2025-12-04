@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Kết Quả Tìm Kiếm</title>
+<link rel="stylesheet" href="style.css"> <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+</head>
+<body>
+
+<header>
+<div class="logo">sybau</div>
+<nav>
+ <a href="index.html">Home</a>
+        <a href="about-us.html">About us</a> 
+        <a href="https://lsts.edu.vn" target="_blank">Contact</a> 
+        <a href="https://www.google.com/" id="search-icon">Search</a> 
+</nav>
+</header>
+
+<main class="product-list-page">
+    <h2 id="search-query-display"></h2>
+    
+    <div class="product-grid" id="search-results-grid">
+    </div>
+    
+    <p id="no-results" style="display:none; text-align:center;">Không tìm thấy sản phẩm nào phù hợp với từ khóa này.</p>
+</main>
+
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        const urlParams = new URLSearchParams(window.location.search);
+        const query = urlParams.get('q');
+        
+        const displayElement = document.getElementById('search-query-display');
+        const resultsGrid = document.getElementById('search-results-grid');
+        const noResults = document.getElementById('no-results');
+
+        if (query) {
+            displayElement.textContent = `Kết quả tìm kiếm cho: "${query}"`;
+            
+            if (query.toLowerCase().includes('chair') || query.toLowerCase().includes('đói quá')) {
+                resultsGrid.innerHTML = `
+                    <a href="#" class="product-item"><img src="https://i.imgur.com/E5YOOzJ.png" alt="Chairs"><p class="product-name">Nai Chair (Ghế Nai)</p><p class="product-price">5.000.000 VNĐ</p></a>
+                    <a href="#" class="product-item"><img src="https://i.imgur.com/8kgZ9kC.png" alt="Barstools"><p class="product-name">Ghế Bar Cao</p><p class="product-price">3.500.000 VNĐ</p></a>
+                    <a href="#" class="product-item"><img src="https://i.imgur.com/sH7n6Vj.png" alt="Armchairs"><p class="product-name">Ghế Thư Giãn</p><p class="product-price">7.200.000 VNĐ</p></a>
+                `;
+                noResults.style.display = 'none';
+            } else {
+                resultsGrid.innerHTML = '';
+                noResults.style.display = 'block'; 
+            }
+
+        } else {
+            displayElement.textContent = "Kết Quả Tìm Kiếm"; 
+            noResults.style.display = 'none'; 
+            resultsGrid.innerHTML = ''; 
+        }
+    });
+</script>
+
+</body>
+</html>
